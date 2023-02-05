@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
+//const cors = require("cors");
 
-require('dotenv').config()
+//require('dotenv').config()
 
 const app = express();
 const PORT_NUM = process.env.APPSETTING_SERVER_PORT || 8080;
@@ -10,7 +10,7 @@ const PORT_NUM = process.env.APPSETTING_SERVER_PORT || 8080;
 app.use(express.json());
 
 mongoose.set('strictQuery', true);
-app.use(cors());
+//app.use(cors());
 
 app.listen(PORT_NUM,  async () => {
     await mongoose.connect(process.env.APPSETTING_MONGO_API_KEY);
