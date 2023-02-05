@@ -5,7 +5,7 @@ const cors = require("cors");
 require('dotenv').config()
 
 const app = express();
-const PORT_NUM = process.env.SERVER_PORT || 8080;
+const PORT_NUM = process.env.APPSETTING_SERVER_PORT || 8080;
 
 app.use(express.json());
 
@@ -13,7 +13,7 @@ mongoose.set('strictQuery', true);
 app.use(cors());
 
 app.listen(PORT_NUM,  async () => {
-    await mongoose.connect(process.env.CUSTOMCONNSTR_MONGO_API_KEY);
+    await mongoose.connect(process.env.APPSETTING_MONGO_API_KEY);
     console.log("Server Started, Listening on Port "+ PORT_NUM);
 });
 
